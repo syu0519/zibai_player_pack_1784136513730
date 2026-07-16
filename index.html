@@ -23,11 +23,13 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 @keyframes blink{50%{opacity:.2}}
 .bgm-btn{position:absolute;top:8px;left:8px;z-index:4;background:rgba(0,0,0,.5);border:1px solid var(--bd2);border-radius:14px;color:var(--t2);font-size:13px;width:28px;height:28px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .bgm-btn.on{border-color:var(--ac2);color:var(--ac)}
-.grid{display:grid;grid-template-columns:repeat(3,64px);gap:6px}
-.wbtn{background:var(--s2);border:1px solid var(--bd2);border-radius:6px;color:var(--ac);font-family:var(--mo);font-size:11px;padding:10px 0;cursor:pointer;line-height:1.5}
-.wbtn:hover{border-color:var(--ac2);background:#132018}
-.wbtn:disabled{color:var(--t3);cursor:not-allowed;background:var(--s);opacity:.4}
+.grid{position:absolute;left:8px;bottom:8px;z-index:5;display:grid;grid-template-columns:repeat(3,48px);gap:5px}
+.wbtn{background:rgba(17,17,17,.6);backdrop-filter:blur(2px);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:var(--ac);font-family:var(--mo);font-size:9px;padding:7px 0;cursor:pointer;line-height:1.4;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.wbtn:active{border-color:var(--ac2);background:rgba(19,32,24,.85)}
+.wbtn:hover{border-color:var(--ac2);background:rgba(19,32,24,.85)}
+.wbtn:disabled{color:var(--t3);cursor:not-allowed;background:rgba(17,17,17,.3);opacity:.35;border-color:rgba(255,255,255,.05)}
 .wbtn.wide{grid-column:1/4}
+.wbtn.ph{visibility:hidden;pointer-events:none}
 .hint{font-size:10px;color:var(--t3);text-align:center;max-width:320px;line-height:1.6}
 </style>
 </head>
@@ -41,20 +43,19 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
     <video id="vidB" playsinline muted crossorigin="anonymous"></video>
     <canvas id="recCanvas" style="display:none"></canvas>
     <div class="empty" id="emptyMsg" style="display:none">這個方向還沒有記憶…</div>
+    <div class="grid">
+      <button class="wbtn ph" data-k="Q" disabled tabindex="-1">－</button>
+      <button class="wbtn" data-k="W">↑ 前進<br>W</button>
+      <button class="wbtn" data-k="E">⏸ 待機<br>E</button>
+      <button class="wbtn" data-k="A">← 左移<br>A</button>
+      <button class="wbtn" data-k="S">↓ 後退<br>S</button>
+      <button class="wbtn" data-k="D">→ 右移<br>D</button>
+      <button class="wbtn wide" data-k="R">↻ 轉身 R</button>
+    </div>
   </div>
   <audio id="bgm" src="music/bgm.mp3" loop preload="auto"></audio>
   <div id="recErr" style="font-size:10px;color:var(--rec);text-align:center;max-width:320px;min-height:14px"></div>
-  <div class="grid">
-    <button class="wbtn" data-k="Q" disabled>－</button>
-    <button class="wbtn" data-k="W">↑ 前進<br>W</button>
-    <button class="wbtn" data-k="E" disabled>－</button>
-    <button class="wbtn" data-k="A">← 左移<br>A</button>
-    <button class="wbtn" data-k="S">⏸ 待機<br>S</button>
-    <button class="wbtn" data-k="D">→ 右移<br>D</button>
-    <button class="wbtn wide" data-k="B">↓ 後退 B</button>
-    <button class="wbtn wide" data-k="T">↻ 轉身 T</button>
-  </div>
-  <div class="hint">動作播完會自動淡回待機。灰掉的方向代表這個節點還沒有那個方向的記憶。左上角🔇為背景音樂開關，第一次按方向鍵時會自動嘗試播放。需要 ComfyUI（本機或同網段）持續運行才能載入影片；若要穩定錄影，建議改用「📦 匯出可攜包(ZIP)」版本。</div>
+  <div class="hint">動作播完會自動淡回待機。灰掉的方向代表這個節點還沒有那個方向的記憶。左上角🔇為背景音樂開關，第一次按方向鍵時會自動嘗試播放。虛擬按鍵疊加在畫面左下角方便單手操作。需要 ComfyUI（本機或同網段）持續運行才能載入影片；若要穩定錄影，建議改用「📦 匯出可攜包(ZIP)」版本。</div>
 
 <script>
 const GRAPH = {
@@ -82,7 +83,7 @@ const GRAPH = {
     {
       "from": "node_11",
       "to": "node_10",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_002.mp4",
       "title": "B，back，退回入口方向",
       "reversible": true
@@ -170,7 +171,7 @@ const GRAPH = {
     {
       "from": "node_11",
       "to": "node_11",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_013.mp4",
       "title": "S，stay，中央祭壇原地待機",
       "reversible": true
@@ -178,7 +179,7 @@ const GRAPH = {
     {
       "from": "node_12",
       "to": "node_12",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_014.mp4",
       "title": "S，stay，光環深處原地待機",
       "reversible": true
@@ -186,7 +187,7 @@ const GRAPH = {
     {
       "from": "node_10",
       "to": "node_10",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_015.mp4",
       "title": "S，stay，入口方向原地待機",
       "reversible": true
@@ -194,7 +195,7 @@ const GRAPH = {
     {
       "from": "node_00",
       "to": "node_00",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_016.mp4",
       "title": "S，stay，南側走廊入口原地待機",
       "reversible": true
@@ -202,7 +203,7 @@ const GRAPH = {
     {
       "from": "node_01",
       "to": "node_01",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_017.mp4",
       "title": "S，stay，西側祭壇原地待機",
       "reversible": true
@@ -210,7 +211,7 @@ const GRAPH = {
     {
       "from": "node_02",
       "to": "node_02",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_018.mp4",
       "title": "S，stay，西側祭壇深處原地待機",
       "reversible": true
@@ -218,7 +219,7 @@ const GRAPH = {
     {
       "from": "node_20",
       "to": "node_20",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_019.mp4",
       "title": "S，stay，南側走廊東端原地待機",
       "reversible": true
@@ -226,7 +227,7 @@ const GRAPH = {
     {
       "from": "node_21",
       "to": "node_21",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_020.mp4",
       "title": "S，stay，式神側廳原地待機",
       "reversible": true
@@ -234,7 +235,7 @@ const GRAPH = {
     {
       "from": "node_22",
       "to": "node_22",
-      "key": "S",
+      "key": "E",
       "url": "videos/seg_021.mp4",
       "title": "S，stay，式神廳深處原地待機",
       "reversible": true
@@ -242,7 +243,7 @@ const GRAPH = {
     {
       "from": "node_12",
       "to": "node_11",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_022.mp4",
       "title": "B，back，離開光環中心",
       "reversible": true
@@ -306,7 +307,7 @@ const GRAPH = {
     {
       "from": "node_01",
       "to": "node_00",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_030.mp4",
       "title": "B，back，西側祭壇退回",
       "reversible": true
@@ -314,7 +315,7 @@ const GRAPH = {
     {
       "from": "node_02",
       "to": "node_01",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_031.mp4",
       "title": "B，back，西側祭壇深處退回",
       "reversible": true
@@ -322,7 +323,7 @@ const GRAPH = {
     {
       "from": "node_21",
       "to": "node_20",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_032.mp4",
       "title": "B，back，東側式神廳退回",
       "reversible": true
@@ -330,7 +331,7 @@ const GRAPH = {
     {
       "from": "node_22",
       "to": "node_21",
-      "key": "B",
+      "key": "S",
       "url": "videos/seg_033.mp4",
       "title": "B，back，東側式神廳深處退回",
       "reversible": true
@@ -338,7 +339,7 @@ const GRAPH = {
     {
       "from": "node_11",
       "to": "node_11",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_034.mp4",
       "title": "T，turn，中央祭壇轉身",
       "reversible": true
@@ -346,7 +347,7 @@ const GRAPH = {
     {
       "from": "node_12",
       "to": "node_12",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_035.mp4",
       "title": "T，turn，光環深處轉身",
       "reversible": true
@@ -354,7 +355,7 @@ const GRAPH = {
     {
       "from": "node_10",
       "to": "node_10",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_036.mp4",
       "title": "T，turn，入口方向轉身",
       "reversible": true
@@ -362,7 +363,7 @@ const GRAPH = {
     {
       "from": "node_00",
       "to": "node_00",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_037.mp4",
       "title": "T，turn，走廊入口轉身",
       "reversible": true
@@ -370,7 +371,7 @@ const GRAPH = {
     {
       "from": "node_01",
       "to": "node_01",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_038.mp4",
       "title": "T，turn，西側祭壇轉身",
       "reversible": true
@@ -378,7 +379,7 @@ const GRAPH = {
     {
       "from": "node_02",
       "to": "node_02",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_039.mp4",
       "title": "T，turn，西側祭壇深處轉身",
       "reversible": true
@@ -386,7 +387,7 @@ const GRAPH = {
     {
       "from": "node_20",
       "to": "node_20",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_040.mp4",
       "title": "T，turn，走廊東端轉身",
       "reversible": true
@@ -394,7 +395,7 @@ const GRAPH = {
     {
       "from": "node_21",
       "to": "node_21",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_041.mp4",
       "title": "T，turn，式神側廳轉身",
       "reversible": true
@@ -402,7 +403,7 @@ const GRAPH = {
     {
       "from": "node_22",
       "to": "node_22",
-      "key": "T",
+      "key": "R",
       "url": "videos/seg_042.mp4",
       "title": "T，turn，式神廳深處轉身",
       "reversible": true
@@ -509,7 +510,7 @@ function play(key){
   emptyMsg.style.display='none'
   tBar.textContent=edge.title
   curKey=key
-  const isIdleLoop=(edge.from===edge.to&&key==='S')
+  const isIdleLoop=(edge.from===edge.to&&key==='E')
 
   crossfadeTo(edge,{
     loop:isIdleLoop,
@@ -517,9 +518,9 @@ function play(key){
       if(curKey!==key)return // 播放中途玩家已經切了別的方向，不要搶播
       curNode=edge.to
       refreshButtons()
-      const idleEdge=findEdge(curNode,'S')
+      const idleEdge=findEdge(curNode,'E')
       if(idleEdge){
-        curKey='S'
+        curKey='E'
         tBar.textContent=idleEdge.title
         crossfadeTo(idleEdge,{loop:true})
       }
@@ -681,8 +682,8 @@ function tryAutoStartBgm(){
 
 // 開場：站在起始節點，先播待機（如果有的話）
 refreshButtons()
-if(findEdge(curNode,'S')){
-  play('S')
+if(findEdge(curNode,'E')){
+  play('E')
 }else{
   emptyMsg.style.display='flex'
   tBar.textContent='尚未生成待機畫面'
