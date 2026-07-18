@@ -60,498 +60,353 @@ body{background:var(--bg);color:var(--t);font-family:var(--fn);min-height:100vh;
 <script>
 const GRAPH = {
   "nodes": [
-    "node_00",
-    "node_01",
-    "node_02",
-    "node_03",
-    "node_04",
-    "node_05",
-    "node_06",
-    "node_07",
-    "node_08",
-    "node_09",
-    "node_10",
     "node_11",
     "node_12",
-    "node_13",
-    "node_14",
-    "node_15",
-    "node_16",
-    "node_17"
+    "node_10",
+    "node_01",
+    "node_21",
+    "node_00",
+    "node_20",
+    "node_02",
+    "node_22"
   ],
-  "start": "node_00",
+  "start": "node_11",
   "edges": [
     {
-      "from": "node_00",
-      "to": "node_00",
-      "key": "E",
+      "from": "node_11",
+      "to": "node_12",
+      "key": "W",
       "url": "videos/seg_001.mp4",
-      "title": "E，idle，日常待機",
+      "title": "W，forward，往光環中心深入",
       "reversible": true
     },
     {
-      "from": "node_00",
-      "to": "node_01",
-      "key": "W",
-      "url": "videos/seg_002.mp4",
-      "title": "W，move，往簾子走近停電",
-      "reversible": true
-    },
-    {
-      "from": "node_00",
-      "to": "node_00",
-      "key": "R",
-      "url": "videos/seg_003.mp4",
-      "title": "R，turn，停電後強制轉身",
-      "reversible": true
-    },
-    {
-      "from": "node_01",
-      "to": "node_01",
-      "key": "E",
-      "url": "videos/seg_004.mp4",
-      "title": "E，idle，停電後僵立",
-      "reversible": true
-    },
-    {
-      "from": "node_01",
-      "to": "node_02",
-      "key": "W",
-      "url": "videos/seg_005.mp4",
-      "title": "W，move，開始奔跑",
-      "reversible": true
-    },
-    {
-      "from": "node_01",
-      "to": "node_01",
+      "from": "node_11",
+      "to": "node_10",
       "key": "S",
+      "url": "videos/seg_002.mp4",
+      "title": "B，back，退回入口方向",
+      "reversible": true
+    },
+    {
+      "from": "node_11",
+      "to": "node_01",
+      "key": "A",
+      "url": "videos/seg_003.mp4",
+      "title": "A，left，側邊祭壇",
+      "reversible": true
+    },
+    {
+      "from": "node_11",
+      "to": "node_21",
+      "key": "D",
+      "url": "videos/seg_004.mp4",
+      "title": "D，right，式神側廳",
+      "reversible": true
+    },
+    {
+      "from": "node_00",
+      "to": "node_10",
+      "key": "D",
+      "url": "videos/seg_005.mp4",
+      "title": "D，right，南側走廊向東",
+      "reversible": true
+    },
+    {
+      "from": "node_10",
+      "to": "node_20",
+      "key": "D",
       "url": "videos/seg_006.mp4",
-      "title": "B，back，踉蹌後退",
+      "title": "D，right，南側走廊延伸向東",
       "reversible": true
     },
     {
       "from": "node_02",
-      "to": "node_02",
-      "key": "E",
+      "to": "node_12",
+      "key": "D",
       "url": "videos/seg_007.mp4",
-      "title": "E，idle，跑中短暫停頓",
+      "title": "D，right，北側迴廊向東",
       "reversible": true
     },
     {
-      "from": "node_02",
-      "to": "node_03",
-      "key": "W",
+      "from": "node_12",
+      "to": "node_22",
+      "key": "D",
       "url": "videos/seg_008.mp4",
-      "title": "W，move，加速衝刺",
+      "title": "D，right，北側迴廊延伸向東",
       "reversible": true
     },
     {
-      "from": "node_02",
-      "to": "node_02",
-      "key": "R",
+      "from": "node_00",
+      "to": "node_01",
+      "key": "W",
       "url": "videos/seg_009.mp4",
-      "title": "R，turn，跑中回頭確認",
+      "title": "W，forward，西側祭壇深入",
       "reversible": true
     },
     {
-      "from": "node_03",
-      "to": "node_03",
-      "key": "E",
+      "from": "node_01",
+      "to": "node_02",
+      "key": "W",
       "url": "videos/seg_010.mp4",
-      "title": "E，idle，加速段喘氣",
+      "title": "W，forward，西側祭壇延伸深入",
       "reversible": true
     },
     {
-      "from": "node_03",
-      "to": "node_04",
+      "from": "node_20",
+      "to": "node_21",
       "key": "W",
       "url": "videos/seg_011.mp4",
-      "title": "W，move，全速進入扭曲區",
+      "title": "W，forward，東側式神廳深入",
       "reversible": true
     },
     {
-      "from": "node_03",
-      "to": "node_03",
-      "key": "S",
+      "from": "node_21",
+      "to": "node_22",
+      "key": "W",
       "url": "videos/seg_012.mp4",
-      "title": "B，back，扭曲區踉蹌",
+      "title": "W，forward，東側式神廳延伸深入",
       "reversible": true
     },
     {
-      "from": "node_04",
-      "to": "node_04",
+      "from": "node_11",
+      "to": "node_11",
       "key": "E",
       "url": "videos/seg_013.mp4",
-      "title": "E，idle，扭曲走廊待機",
+      "title": "S，stay，中央祭壇原地待機",
       "reversible": true
     },
     {
-      "from": "node_04",
-      "to": "node_05",
-      "key": "W",
+      "from": "node_12",
+      "to": "node_12",
+      "key": "E",
       "url": "videos/seg_014.mp4",
-      "title": "W，move，衝入門列區",
+      "title": "S，stay，光環深處原地待機",
       "reversible": true
     },
     {
-      "from": "node_04",
-      "to": "node_04",
-      "key": "R",
+      "from": "node_10",
+      "to": "node_10",
+      "key": "E",
       "url": "videos/seg_015.mp4",
-      "title": "R，turn，扭曲中強制轉身",
+      "title": "S，stay，入口方向原地待機",
       "reversible": true
     },
     {
-      "from": "node_05",
-      "to": "node_05",
+      "from": "node_00",
+      "to": "node_00",
       "key": "E",
       "url": "videos/seg_016.mp4",
-      "title": "E，idle，門列區喘息",
+      "title": "S，stay，南側走廊入口原地待機",
       "reversible": true
     },
     {
-      "from": "node_05",
-      "to": "node_06",
-      "key": "W",
+      "from": "node_01",
+      "to": "node_01",
+      "key": "E",
       "url": "videos/seg_017.mp4",
-      "title": "W，move，門列加速穿越",
+      "title": "S，stay，西側祭壇原地待機",
       "reversible": true
     },
     {
-      "from": "node_05",
-      "to": "node_05",
-      "key": "S",
+      "from": "node_02",
+      "to": "node_02",
+      "key": "E",
       "url": "videos/seg_018.mp4",
-      "title": "B，back，被門拉扯",
+      "title": "S，stay，西側祭壇深處原地待機",
       "reversible": true
     },
     {
-      "from": "node_05",
-      "to": "node_05",
-      "key": "R",
+      "from": "node_20",
+      "to": "node_20",
+      "key": "E",
       "url": "videos/seg_019.mp4",
-      "title": "R，turn，門列中回頭",
+      "title": "S，stay，南側走廊東端原地待機",
       "reversible": true
     },
     {
-      "from": "node_06",
-      "to": "node_06",
+      "from": "node_21",
+      "to": "node_21",
       "key": "E",
       "url": "videos/seg_020.mp4",
-      "title": "E，idle，黑暗逼近待機",
+      "title": "S，stay，式神側廳原地待機",
       "reversible": true
     },
     {
-      "from": "node_06",
-      "to": "node_07",
-      "key": "W",
+      "from": "node_22",
+      "to": "node_22",
+      "key": "E",
       "url": "videos/seg_021.mp4",
-      "title": "W，move，衝入黑暗",
+      "title": "S，stay，式神廳深處原地待機",
       "reversible": true
     },
     {
-      "from": "node_06",
-      "to": "node_06",
+      "from": "node_12",
+      "to": "node_11",
       "key": "S",
       "url": "videos/seg_022.mp4",
-      "title": "B，back，黑暗中踉蹌",
+      "title": "B，back，離開光環中心",
       "reversible": true
     },
     {
-      "from": "node_06",
-      "to": "node_06",
-      "key": "R",
+      "from": "node_10",
+      "to": "node_11",
+      "key": "W",
       "url": "videos/seg_023.mp4",
-      "title": "R，turn，黑暗中回頭",
+      "title": "W，forward，從入口進入中央",
       "reversible": true
     },
     {
-      "from": "node_07",
-      "to": "node_07",
-      "key": "E",
+      "from": "node_01",
+      "to": "node_11",
+      "key": "D",
       "url": "videos/seg_024.mp4",
-      "title": "E，idle，燈滅前的停頓",
+      "title": "D，right，從側祭壇回中央",
       "reversible": true
     },
     {
-      "from": "node_07",
-      "to": "node_08",
-      "key": "W",
+      "from": "node_21",
+      "to": "node_11",
+      "key": "A",
       "url": "videos/seg_025.mp4",
-      "title": "W，move，最後衝刺燈滅",
+      "title": "A，left，從式神廳回中央",
       "reversible": true
     },
     {
-      "from": "node_07",
-      "to": "node_07",
-      "key": "S",
+      "from": "node_10",
+      "to": "node_00",
+      "key": "A",
       "url": "videos/seg_026.mp4",
-      "title": "B，back，被黑暗推回",
+      "title": "A，left，走廊往西",
       "reversible": true
     },
     {
-      "from": "node_07",
-      "to": "node_07",
-      "key": "R",
+      "from": "node_20",
+      "to": "node_10",
+      "key": "A",
       "url": "videos/seg_027.mp4",
-      "title": "R，turn，最後回頭",
+      "title": "A，left，走廊延伸往西",
       "reversible": true
     },
     {
-      "from": "node_08",
-      "to": "node_08",
-      "key": "E",
+      "from": "node_12",
+      "to": "node_02",
+      "key": "A",
       "url": "videos/seg_028.mp4",
-      "title": "E，idle，完全黑暗中",
+      "title": "A，left，北迴廊往西",
       "reversible": true
     },
     {
-      "from": "node_08",
-      "to": "node_09",
-      "key": "W",
+      "from": "node_22",
+      "to": "node_12",
+      "key": "A",
       "url": "videos/seg_029.mp4",
-      "title": "W，move，黑暗中盲目奔跑",
+      "title": "A，left，北迴廊延伸往西",
       "reversible": true
     },
     {
-      "from": "node_08",
-      "to": "node_08",
+      "from": "node_01",
+      "to": "node_00",
       "key": "S",
       "url": "videos/seg_030.mp4",
-      "title": "B，back，黑暗推撞",
-      "reversible": true
-    },
-    {
-      "from": "node_08",
-      "to": "node_08",
-      "key": "R",
-      "url": "videos/seg_031.mp4",
-      "title": "R，turn，黑暗中的最後轉身",
-      "reversible": true
-    },
-    {
-      "from": "node_09",
-      "to": "node_09",
-      "key": "E",
-      "url": "videos/seg_032.mp4",
-      "title": "E，idle，吞沒前最後靜止",
-      "reversible": true
-    },
-    {
-      "from": "node_09",
-      "to": "node_10",
-      "key": "W",
-      "url": "videos/seg_033.mp4",
-      "title": "W，move，深入黑暗繼續跑",
-      "reversible": true
-    },
-    {
-      "from": "node_09",
-      "to": "node_09",
-      "key": "R",
-      "url": "videos/seg_034.mp4",
-      "title": "R，turn，深入後轉身",
-      "reversible": true
-    },
-    {
-      "from": "node_10",
-      "to": "node_10",
-      "key": "E",
-      "url": "videos/seg_035.mp4",
-      "title": "E，idle，無限走廊深處待機",
-      "reversible": true
-    },
-    {
-      "from": "node_10",
-      "to": "node_11",
-      "key": "W",
-      "url": "videos/seg_036.mp4",
-      "title": "W，move，走廊開始重複",
-      "reversible": true
-    },
-    {
-      "from": "node_11",
-      "to": "node_11",
-      "key": "E",
-      "url": "videos/seg_037.mp4",
-      "title": "E，idle，Loop 感待機",
-      "reversible": true
-    },
-    {
-      "from": "node_11",
-      "to": "node_12",
-      "key": "W",
-      "url": "videos/seg_038.mp4",
-      "title": "W，move，加速衝破Loop",
-      "reversible": true
-    },
-    {
-      "from": "node_12",
-      "to": "node_12",
-      "key": "E",
-      "url": "videos/seg_039.mp4",
-      "title": "E，idle，幻覺光源待機",
-      "reversible": true
-    },
-    {
-      "from": "node_12",
-      "to": "node_13",
-      "key": "W",
-      "url": "videos/seg_040.mp4",
-      "title": "W，move，衝向幻覺光源",
-      "reversible": true
-    },
-    {
-      "from": "node_13",
-      "to": "node_13",
-      "key": "E",
-      "url": "videos/seg_041.mp4",
-      "title": "E，idle，光源消失待機",
-      "reversible": true
-    },
-    {
-      "from": "node_13",
-      "to": "node_14",
-      "key": "W",
-      "url": "videos/seg_042.mp4",
-      "title": "W，move，光消失後繼續跑",
-      "reversible": true
-    },
-    {
-      "from": "node_14",
-      "to": "node_14",
-      "key": "E",
-      "url": "videos/seg_043.mp4",
-      "title": "E，idle，接近尾聲待機",
-      "reversible": true
-    },
-    {
-      "from": "node_14",
-      "to": "node_15",
-      "key": "W",
-      "url": "videos/seg_044.mp4",
-      "title": "W，move，幾乎全黑中奔跑",
-      "reversible": true
-    },
-    {
-      "from": "node_15",
-      "to": "node_15",
-      "key": "E",
-      "url": "videos/seg_045.mp4",
-      "title": "E，idle，最終前待機",
-      "reversible": true
-    },
-    {
-      "from": "node_15",
-      "to": "node_16",
-      "key": "W",
-      "url": "videos/seg_046.mp4",
-      "title": "W，move，最後衝刺前奏",
-      "reversible": true
-    },
-    {
-      "from": "node_16",
-      "to": "node_16",
-      "key": "E",
-      "url": "videos/seg_047.mp4",
-      "title": "E，idle，吞沒前最後靜止",
-      "reversible": true
-    },
-    {
-      "from": "node_16",
-      "to": "node_17",
-      "key": "W",
-      "url": "videos/seg_048.mp4",
-      "title": "W，move，倒數第二衝刺",
+      "title": "B，back，西側祭壇退回",
       "reversible": true
     },
     {
       "from": "node_02",
       "to": "node_01",
       "key": "S",
-      "url": "videos/seg_005.mp4",
-      "title": "W，move，開始奔跑（倒放）",
-      "reverseVideo": true
+      "url": "videos/seg_031.mp4",
+      "title": "B，back，西側祭壇深處退回",
+      "reversible": true
     },
     {
-      "from": "node_04",
-      "to": "node_03",
+      "from": "node_21",
+      "to": "node_20",
       "key": "S",
-      "url": "videos/seg_011.mp4",
-      "title": "W，move，全速進入扭曲區（倒放）",
-      "reverseVideo": true
+      "url": "videos/seg_032.mp4",
+      "title": "B，back，東側式神廳退回",
+      "reversible": true
     },
     {
-      "from": "node_09",
-      "to": "node_08",
-      "key": "S",
-      "url": "videos/seg_029.mp4",
-      "title": "W，move，黑暗中盲目奔跑（倒放）",
-      "reverseVideo": true
-    },
-    {
-      "from": "node_10",
-      "to": "node_09",
+      "from": "node_22",
+      "to": "node_21",
       "key": "S",
       "url": "videos/seg_033.mp4",
-      "title": "W，move，深入黑暗繼續跑（倒放）",
-      "reverseVideo": true
+      "title": "B，back，東側式神廳深處退回",
+      "reversible": true
     },
     {
       "from": "node_11",
-      "to": "node_10",
-      "key": "S",
-      "url": "videos/seg_036.mp4",
-      "title": "W，move，走廊開始重複（倒放）",
-      "reverseVideo": true
+      "to": "node_11",
+      "key": "R",
+      "url": "videos/seg_034.mp4",
+      "title": "T，turn，中央祭壇轉身",
+      "reversible": true
     },
     {
       "from": "node_12",
-      "to": "node_11",
-      "key": "S",
-      "url": "videos/seg_038.mp4",
-      "title": "W，move，加速衝破Loop（倒放）",
-      "reverseVideo": true
-    },
-    {
-      "from": "node_13",
       "to": "node_12",
-      "key": "S",
+      "key": "R",
+      "url": "videos/seg_035.mp4",
+      "title": "T，turn，光環深處轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_10",
+      "to": "node_10",
+      "key": "R",
+      "url": "videos/seg_036.mp4",
+      "title": "T，turn，入口方向轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_00",
+      "to": "node_00",
+      "key": "R",
+      "url": "videos/seg_037.mp4",
+      "title": "T，turn，走廊入口轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_01",
+      "to": "node_01",
+      "key": "R",
+      "url": "videos/seg_038.mp4",
+      "title": "T，turn，西側祭壇轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_02",
+      "to": "node_02",
+      "key": "R",
+      "url": "videos/seg_039.mp4",
+      "title": "T，turn，西側祭壇深處轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_20",
+      "to": "node_20",
+      "key": "R",
       "url": "videos/seg_040.mp4",
-      "title": "W，move，衝向幻覺光源（倒放）",
-      "reverseVideo": true
+      "title": "T，turn，走廊東端轉身",
+      "reversible": true
     },
     {
-      "from": "node_14",
-      "to": "node_13",
-      "key": "S",
+      "from": "node_21",
+      "to": "node_21",
+      "key": "R",
+      "url": "videos/seg_041.mp4",
+      "title": "T，turn，式神側廳轉身",
+      "reversible": true
+    },
+    {
+      "from": "node_22",
+      "to": "node_22",
+      "key": "R",
       "url": "videos/seg_042.mp4",
-      "title": "W，move，光消失後繼續跑（倒放）",
-      "reverseVideo": true
-    },
-    {
-      "from": "node_15",
-      "to": "node_14",
-      "key": "S",
-      "url": "videos/seg_044.mp4",
-      "title": "W，move，幾乎全黑中奔跑（倒放）",
-      "reverseVideo": true
-    },
-    {
-      "from": "node_16",
-      "to": "node_15",
-      "key": "S",
-      "url": "videos/seg_046.mp4",
-      "title": "W，move，最後衝刺前奏（倒放）",
-      "reverseVideo": true
-    },
-    {
-      "from": "node_17",
-      "to": "node_16",
-      "key": "S",
-      "url": "videos/seg_048.mp4",
-      "title": "W，move，倒數第二衝刺（倒放）",
-      "reverseVideo": true
+      "title": "T，turn，式神廳深處轉身",
+      "reversible": true
     }
   ]
 };
@@ -628,29 +483,21 @@ function crossfadeTo(edge,{loop=false,onEnded=null}={}){
   next.onended=null
   next.src=edge.url
 
-  // iOS Safari/WebKit 要求 video.play() 必須在使用者手勢（點擊）的同一個
-  // 呼叫堆疊裡「同步」執行，才會被信任為使用者主動要求播放。
-  // 舊寫法把 play() 包在 canplay 事件監聽器裡才呼叫，canplay 是非同步觸發的，
-  // 跟點擊動作在時間軸上已經斷開，iOS 會直接靜默拒絕播放（不報錯，純黑畫面）。
-  // 修法：play() 立刻同步呼叫；canplay 只保留來控制「淡入動畫」的時機，
-  // 不再拿它來 gate 住 play() 本身。
-  if(!edge.reverseVideo){
-    next.currentTime=0
-    next.play().catch(()=>{})
-    if(onEnded)next.onended=onEnded
-  }
-
-  const doFade=()=>{
+  const doSwap=()=>{
     if(edge.reverseVideo){
       next.pause()
       playReverse(next,onEnded||null)
+    }else{
+      next.currentTime=0
+      next.play().catch(()=>{})
+      if(onEnded)next.onended=onEnded
     }
     animateFade(activeIdx,nextIdx)
     activeIdx=nextIdx
   }
 
-  if(next.readyState>=2){doFade()}
-  else{next.addEventListener('canplay',doFade,{once:true})}
+  if(next.readyState>=2){doSwap()}
+  else{next.addEventListener('canplay',doSwap,{once:true})}
 }
 
 function play(key){
