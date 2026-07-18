@@ -2,6 +2,8 @@
 
 茲白 Time Machine 世界探索 Demo——用 LingBot-World 生成的 42 段場景影片串接而成的可互動小遊戲，用鍵盤或按鈕在神社場景中自由移動、轉身、待機。
 
+<img width="506" height="902" alt="zibai  2026-07-18 145538" src="https://github.com/user-attachments/assets/35c3dd4b-4a4a-4caf-8600-783facb8f42e" />
+
 ## 怎麼玩
 
 打開 `index.html`，用以下按鍵探索：
